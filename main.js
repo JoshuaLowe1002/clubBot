@@ -88,31 +88,30 @@ client.on("message", message => {
 
     if (message.content == ">help") {
         message.channel.send({embed: {
-            color: 3447003,
+            color: "#FFA300",
             author: {
-              name: client.user.username,
+              name: ":question: clubBot Help",
               icon_url: client.user.avatarURL
             },
             title: "This is an embed",
             url: "http://google.com",
             description: "This is a test embed to showcase what they look like and what they can do.",
             fields: [{
-                name: "Fields",
-                value: "They can have different fields with small headlines."
+                name: "**>verify**",
+                value: "Use this to verify that you're a member by entering you user ID."
               },
               {
-                name: "Masked links",
-                value: "You can put [masked links](http://google.com) inside of rich embeds."
+                name: "**>addID**",
+                value: "Admins can use this command to add a user ID into the system."
               },
               {
-                name: "Markdown",
-                value: "You can put all the *usual* **__Markdown__** inside of them."
+                name: "**>help**",
+                value: "Display a list of commands you can use."
               }
             ],
-            timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "© Example"
+              text: "clubBot v1.0.0"
             }
           }
         });
