@@ -90,11 +90,12 @@ client.on("message", message => {
         message.channel.send({embed: {
             color: "#FFA300",
             author: {
-              name: ":question: clubBot Help",
+              name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: "This is an embed",
-            description: "This is a test embed to showcase what they look like and what they can do.",
+            title: ":question: clubBot Help",
+            url: "https://github.com/JoshuaLowe1002/clubBot/",
+            description: "Here is a list of commands you can use with clubBot!",
             fields: [{
                 name: "**>verify**",
                 value: "Use this to verify that you're a member by entering you user ID."
@@ -108,6 +109,7 @@ client.on("message", message => {
                 value: "Display a list of commands you can use."
               }
             ],
+            timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
               text: "clubBot v1.0.0"
