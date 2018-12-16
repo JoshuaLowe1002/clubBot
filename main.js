@@ -90,7 +90,7 @@ client.on("message", message => {
         const embed = new RichEmbed()
             .setTitle(":question: clubBot Help")
             .setColor("#FFA300")
-            .setDescription("Please enter a User ID you'd like to add to the system");
+            .setDescription("Here's a list of commands you can use with clubBot!")
         fields: [
             {
                 name: ">verify",
@@ -105,8 +105,8 @@ client.on("message", message => {
                 value: "Display a list of commands you can use."
             },
         ];
-        footer: {icon_url: client.user.avatarURL; text: "clubBot v1.0.0"};
-        
+        footer: { icon_url: client.user.avatarURL; text: "clubBot v1.0.0" };
+
 
         message.channel.send(embed)
 
