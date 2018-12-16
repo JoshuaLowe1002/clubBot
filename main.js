@@ -58,7 +58,7 @@ client.on("message", message => {
                             .setTitle('Verification Timeout')
                             .setColor("#FFA300")
                             .setDescription("The verification process has ended due to no user giving an ID. Please run >verify to start again.");
-                        
+
                     });
             });
     }
@@ -76,19 +76,46 @@ client.on("message", message => {
                     errors: ['time'],
                 })
                     .then((collected) => {
-                            console.log("New ID added")
-                            const newIDAdded = new RichEmbed()
-                                .setTitle(':white_check_mark: User ID added')
-                                .setColor("#66FF33")
-                                .setDescription("A new user ID has been added to the system.");
-                            message.channel.send(newIDAdded);
-                            memberIDs.push(collected.first().content); 
+                        console.log("New ID added")
+                        const newIDAdded = new RichEmbed()
+                            .setTitle(':white_check_mark: User ID added')
+                            .setColor("#66FF33")
+                            .setDescription("A new user ID has been added to the system.");
+                        message.channel.send(newIDAdded);
+                        memberIDs.push(collected.first().content);
                     })
                     .catch(() => {
                         message.channel.send('There was no collected message that passed the filter within the time limit!');
                     });
             });
     }
+
+    if (message.content == ">help") {
+        const embed = new RichEmbed()
+            .setTitle(":question: clubBot Help")
+            .setColor("#FFA300")
+            .setDescription("Please enter a User ID you'd like to add to the system");
+        fields: [
+            {
+                name: ">verify",
+                value: "Use this to verify that you're a member by entering you user ID."
+            },
+            {
+                name: ">addID",
+                value: "Admins can use this command to add a user ID into the system."
+            },
+            {
+                name: ">help",
+                value: "Display a list of commands you can use."
+            },
+        ];
+        footer: {icon_url: client.user.avatarURL; text: "clubBot v1.0.0"};
+        
+
+        message.channel.send(embed)
+
+    }
+
 });
 
 
