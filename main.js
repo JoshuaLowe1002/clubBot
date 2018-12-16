@@ -94,7 +94,6 @@ client.on("message", message => {
               icon_url: client.user.avatarURL
             },
             title: "This is an embed",
-            url: "http://google.com",
             description: "This is a test embed to showcase what they look like and what they can do.",
             fields: [{
                 name: "**>verify**",
