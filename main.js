@@ -88,13 +88,12 @@ client.on("message", message => {
 
     if (message.content == ">help") {
         message.channel.send({embed: {
-            color: "#FFA300",
+            color: 15105570,
             author: {
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: ":question: clubBot Help",
-            url: "https://github.com/JoshuaLowe1002/clubBot/",
+
             description: "Here is a list of commands you can use with clubBot!",
             fields: [{
                 name: "**>verify**",
@@ -109,7 +108,6 @@ client.on("message", message => {
                 value: "Display a list of commands you can use."
               }
             ],
-            timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
               text: "clubBot v1.0.0"
