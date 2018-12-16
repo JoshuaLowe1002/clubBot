@@ -12,11 +12,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-var memberIDs = ["ZWO2VPZ6UULBUAI",
-    "SFRIL2USO1ZFUBF",
-    "CKMXCDJQM7IV8MI",
-    "BW3325VQVGPP024",
-    "YGQLAYZDX0AHW5W"];
+var memberIDs = [];
 
 client.on("message", message => {
     if (message.content == ">verify") {
